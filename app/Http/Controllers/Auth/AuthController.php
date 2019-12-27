@@ -47,6 +47,7 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => __('auth.signup_success')
+            'code' => 200
         ], 201);
     }
 
@@ -115,6 +116,7 @@ class AuthController extends Controller
 
         return response()->json([
             'access_token' => $tokenResult->accessToken,
+            'code' => 200,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString()
         ]);
@@ -130,7 +132,8 @@ class AuthController extends Controller
         $request->user()->token()->revoke();
 
         return response()->json([
-            'message' => __('auth.logout_success')
+            'message' => __('auth.logout_success'),
+            'code' => 200
         ]);
     }
 
