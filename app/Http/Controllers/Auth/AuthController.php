@@ -46,8 +46,9 @@ class AuthController extends Controller
         $user->notify(new SignupActivate($user));
 
         return response()->json([
+            'code' => 200,
             'message' => __('auth.signup_success')
-        ], 201);
+        ], 200);
     }
 
     /**
@@ -63,8 +64,9 @@ class AuthController extends Controller
 
         if (!$user) {
             return response()->json([
+                'code' => 403,
                 'message' => __('auth.token_invalid')
-            ], 404);
+            ], 403);
         }
 
         $user->active = true;
@@ -100,8 +102,9 @@ class AuthController extends Controller
 
         if(!Auth::attempt($credentials))
             return response()->json([
+                'code' => 403,
                 'message' => __('auth.login_failed')
-            ], 401);
+            ], 403);
 
         $user = $request->user();
 
@@ -114,8 +117,8 @@ class AuthController extends Controller
         $token->save();
 
         return response()->json([
-            'access_token' => $tokenResult->accessToken,
             'code' => 200,
+            'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString()
         ]);
@@ -131,8 +134,8 @@ class AuthController extends Controller
         $request->user()->token()->revoke();
 
         return response()->json([
-            'message' => __('auth.logout_success'),
-            'code' => 200
+            'code' => 200,
+            'message' => __('auth.logout_success')
         ]);
     }
 
