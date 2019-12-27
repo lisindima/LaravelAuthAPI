@@ -47,7 +47,6 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => __('auth.signup_success')
-            'code' => 200
         ], 201);
     }
 
