@@ -21,9 +21,9 @@ return [
     'token_invalid' => 'This activation token is invalid.',
 
     'email_signup_activate_subject' => 'Подтвердите свой аккаунт!',
-    'email_signup_activate_line1' => 'Спасибо за регистрацию! Пожалуйста, прежде чем начать, вы должны подтвердить свой аккаунт.',
+    'email_signup_activate_line1' => 'Спасибо за регистрацию! Пожалуйста, прежде чем начать, вы должны активировать свой аккаунт.',
     'email_signup_activate_action' => 'Подтвердить аккаунт.',
-    'email_signup_activate_line2' => 'Спасибо за использование нашего приложения!',
+    'email_signup_activate_line2' => 'Введите этот код в приложение, или нажмите на него для активации аккаунта.',
 
     'email_signup_activated_subject' => 'Добро пожаловать в приложение НСГ-РОСЭНЕРГО',
     'email_signup_activated_line1' => 'Вы завершили свою регистрацию! Ваш аккаунт активирован!',
