@@ -41,7 +41,7 @@ class SignupActivated extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject(__('auth.email_signup_activated_subject', ['appName' => env('APP_NAME', 'Modulr')]))
+                    ->subject(__('auth.email_signup_activated_subject', ['appName' => env('APP_NAME', 'НСГ-РОСЭНЕРГО')]))
                     ->line(__('auth.email_signup_activated_line1'))
                     ->line(__('auth.email_signup_activated_line2'));
     }
