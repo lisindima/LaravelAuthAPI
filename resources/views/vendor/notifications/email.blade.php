@@ -1,7 +1,7 @@
 @component('mail::message')
 {{-- Greeting --}}
 @if (! empty($greeting))
-# {{ $greeting }}
+# @lang('Здравствуйте!')
 @else
 @if ($level == 'error')
 # @lang('Whoops!')
@@ -31,7 +31,7 @@
     }
 ?>
 @component('mail::button', ['url' => $actionUrl, 'color' => $color])
-{{ $actionText }}
+{{ $greeting }}
 @endcomponent
 @endisset
 
