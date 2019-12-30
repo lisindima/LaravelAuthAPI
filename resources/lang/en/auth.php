@@ -13,19 +13,19 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'Эти учетные данные не соответствуют нашим записям.',
+    'throttle' => 'Слишком много попыток входа в систему. Пожалуйста, повторите попытку через :seconds секунд.',
     'signup_success' => 'Successfully created user!',
     'login_failed' => 'Unauthorized',
     'logout_success' => 'Successfully logged out',
     'token_invalid' => 'This activation token is invalid.',
 
-    'email_signup_activate_subject' => 'Confirm your account',
-    'email_signup_activate_line1' => 'Thanks for signup! Please before you begin, you must confirm your account.',
-    'email_signup_activate_action' => 'Confirm Account',
-    'email_signup_activate_line2' => 'Thank you for using our application!',
+    'email_signup_activate_subject' => 'Подтвердите свой аккаунт!',
+    'email_signup_activate_line1' => 'Спасибо за регистрацию! Пожалуйста, прежде чем начать, вы должны подтвердить свой аккаунт.',
+    'email_signup_activate_action' => 'Подтвердить аккаунт.',
+    'email_signup_activate_line2' => 'Спасибо за использование нашего приложения!',
 
-    'email_signup_activated_subject' => 'Welcome to :appName',
-    'email_signup_activated_line1' => 'You have completed your registration! your account is active.',
-    'email_signup_activated_line2' => 'Now you can be login.'
+    'email_signup_activated_subject' => 'Добро пожаловать в приложение НСГ-РОСЭНЕРГО',
+    'email_signup_activated_line1' => 'Вы завершили свою регистрацию! Ваш аккаунт активирован!',
+    'email_signup_activated_line2' => 'Теперь вы можете войти.'
 ];
