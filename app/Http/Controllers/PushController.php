@@ -11,26 +11,36 @@ use FCM;
 
 class PushController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+
+        $title = $request['title'];
+        $body = $request['body'];
+        $token_device = $request['token_device'];
+
         $optionBuilder = new OptionsBuilder();
         $optionBuilder->setTimeToLive(60*20);
 
-        $notificationBuilder = new PayloadNotificationBuilder('Laravel');
-        $notificationBuilder->setBody('Привет')
+        $notificationBuilder = new PayloadNotificationBuilder($title);
+        $notificationBuilder->setBody($body)
             ->setSound('default');
-
-        $dataBuilder = new PayloadDataBuilder();
-        $dataBuilder->addData(['a_data' => 'my_data']);
 
         $option = $optionBuilder->build();
         $notification = $notificationBuilder->build();
-        $data = $dataBuilder->build();
 
-        $token = "c4JETh50UrTxd6tq9gmR2f:APA91bEkJvNtXjBrNO6dQaIAQDihAmvdapxZZ9NNM_PK96bRZRBOMyVW8C2XYWhahTy7vOGnN1_n1t7uzRbfvx_xMze7LfA8ABoLBTuAdy2RAA-Hwz-7lKJamKivpMvGg7n8EtiaPn9w";
+        $token = $token_device;
 
-        $downstreamResponse = FCM::sendTo($token, $option, $notification, $data);
-      
+        $downstreamResponse = FCM::sendTo($token, $option, $notification);
+        
+        return response()->json(array(
+            'token' => $token_device,
+            'title' => $title,
+            'body' => $body, 
+            'success' => $downstreamResponse->numberSuccess(), 
+            'fail' => $downstreamResponse->numberFailure(), 
+            'msg' => $downstreamResponse->tokensWithError()), 
+            200
+        );
     }
 
 
@@ -53,6 +63,14 @@ class PushController extends Controller
         $tokens = ['eTv6otrlhRM:APA91bHEZkv-BTwYEmo76iheFRjiO_R3qqg2ctJP5jgGkKhqJQFK0OoELGzTYdoDk20KAuxjMzwcWpZaFi7rt65_NGR2TC4MTGMp3UN_y69Hi3L_81uBNPHRchWT64e2JVjk0HfcShyo'];
 
         $downstreamResponse = FCM::sendTo($tokens, $option, $notification);
+
+        return response()->json(array(
+            'status' =>'1', 
+            'success' => $downstreamResponse->numberSuccess(), 
+            'fail' => $downstreamResponse->numberFailure(), 
+            'msg' => $downstreamResponse->tokensWithError()), 
+            200
+        );
     }
 
 

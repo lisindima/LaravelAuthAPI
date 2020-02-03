@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/push', 'PushController@index');
+Route::post('/push', 'PushController@index');
