@@ -33,7 +33,7 @@ class PasswordResetController extends Controller
 
         $passwordReset = PasswordReset::updateOrCreate(['email' => $user->email], [
             'email' => $user->email,
-            'token' => str_random(60)
+            'token' => str_random(4)
         ]);
 
         if ($user && $passwordReset)
