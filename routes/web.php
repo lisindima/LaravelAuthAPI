@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::post('/push', 'PushController@index');
+Route::post('/upload', 'PushController@upload');

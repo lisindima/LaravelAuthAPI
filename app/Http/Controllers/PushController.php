@@ -11,6 +11,25 @@ use FCM;
 
 class PushController extends Controller
 {
+    public function upload(Request $request) {
+
+        if(!$request->hasFile('image')) {
+            return response()->json(['Файл не найден'], 400);
+        }
+        $file = $request->file('image');
+        if(!$file->isValid()) {
+            return response()->json(['Файл не найден'], 400);
+        }
+        $clientid = $request['clientid'];
+        $fileName = $file->getClientOriginalName();
+        $path = public_path() . '/uploads/images/'. $clientid;
+        $file->move($path, $file->getClientOriginalName());
+        return response()->json(array(
+            'link' => 'http://176.212.114.79:8686/uploads/images/' . $clientid . '/' . $fileName), 
+            200
+        );
+    }
+
     public function index(Request $request)
     {
 
