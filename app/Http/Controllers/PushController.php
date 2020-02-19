@@ -23,7 +23,7 @@ class PushController extends Controller
         $clientid = $request['clientid'];
         $fileName = $file->getClientOriginalName();
         $path = public_path() . '/uploads/images/'. $clientid;
-        $file->move($path, $file->getClientOriginalName());
+        $file->move($path, $fileName);
         return response()->json(array(
             'link' => 'http://176.212.114.79:8686/uploads/images/' . $clientid . '/' . $fileName), 
             200
