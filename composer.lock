@@ -391,22 +391,22 @@
         },
         {
             "name": "edujugon/push-notification",
-            "version": "v4.3.0",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Edujugon/PushNotification.git",
-                "reference": "582afc20a6385852419fc6cbfda7e2c0021af64e"
+                "reference": "137c8ec708c99dcccfa156c9327cc5befc755ef7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Edujugon/PushNotification/zipball/582afc20a6385852419fc6cbfda7e2c0021af64e",
-                "reference": "582afc20a6385852419fc6cbfda7e2c0021af64e",
+                "url": "https://api.github.com/repos/Edujugon/PushNotification/zipball/137c8ec708c99dcccfa156c9327cc5befc755ef7",
+                "reference": "137c8ec708c99dcccfa156c9327cc5befc755ef7",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^6.3",
-                "illuminate/notifications": "~5.8 || ^6.0 || ^7.0",
-                "illuminate/support": "~5.8 || ^6.0 || ^7.0",
+                "guzzlehttp/guzzle": "^6.3 || ^7.0.1",
+                "illuminate/notifications": "~5.8 || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/support": "~5.8 || ^6.0 || ^7.0 || ^8.0",
                 "php": "^7.1.3"
             },
             "require-dev": {
@@ -449,7 +449,7 @@
                 "priority",
                 "push"
             ],
-            "time": "2020-03-07T07:24:28+00:00"
+            "time": "2020-09-16T06:23:41+00:00"
         },
         {
             "name": "egulias/email-validator",
